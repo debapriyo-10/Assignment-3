@@ -1,3 +1,26 @@
+# Question 1 : Linked List Insertion 
+class Node:
+	def __init__(self, data):   
+		self.data = data
+		self.next = None
+class Solution : 
+    def insertAtEnd(self,head,x):
+        new=Node(x)
+        if head == None:
+             return new
+        current=head
+        while current.next:
+             current=current.next
+        current.next=new
+        return head     
+
+
+
+# Question 2 : Insertion at middle of LInked List 
+class Node:
+	def __init__(self, data):   
+		self.data = data
+		self.next = None
 class Solution:
     def insertInMiddle(self, head, x):
         #code here
@@ -18,3 +41,23 @@ class Solution:
         slow.next = new
         
         return head 
+    
+
+
+# Question 3 : Delete a node
+class Node:
+	def __init__(self, data):   
+		self.data = data
+		self.next = None    
+
+def deleteNode(head,x):
+      if x==1:
+            return head.next
+      current=head
+      for _ in range (x-2):           
+            current=current.next
+      if current.next:
+            current.next=current.next.next
+      return head      
+
+            
